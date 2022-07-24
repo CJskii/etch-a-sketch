@@ -5,16 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
-    <link href="./assets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/aos.css">
+    <link rel="stylesheet" href="./assets/css/line-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <div class="content-wrapper">
-        
-        <div class="container">
-            <button>Grid</button>
+    <div class="content-wrapper col-lg-12">
+        <div class="title p-4 text-center">
+            <h1>Etch-A-Sketch</h1>
         </div>
 
+        
+        <div class="container-fluid d-flex gap-5 justify-content-center align-items-center">
+            
+            <div class="card button-card p-4 m-2">
+                <div class="card-body d-flex flex-column gap-5" style="height: 60vh; width: 20vw;">
+                  <h5 class="card-title">Card title</h5>
+                  <button type="button" class="css-button-shadow--grey btn btn-dark">Dark</button>
+                  <button type="button" class="css-button-shadow--grey btn btn-dark">Dark</button>
+                  <button type="button" class="css-button-shadow--grey btn btn-dark">Dark</button>
+                  <button type="button" class="css-button-shadow--grey btn btn-dark">Dark</button>
+                  <button type="button" class="css-button-shadow--grey btn btn-dark">Dark</button>
+               
+                </div>
+            </div>
+    
+            <div class="card grid-card p-4 m-2">
+                <div class="card-body" style="height: 60vh; width: 60vw;">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>       
+
+
     </div>
-<script src="./assets/script.js"></script>
+
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/aos.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>
