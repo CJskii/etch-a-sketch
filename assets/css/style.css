@@ -10,7 +10,6 @@
     --font-base: "Bai Jamjuree";
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -22,8 +21,6 @@ body {
     font-family: var(--font-base), sans-serif;
 }
 
-
-
 .full-height{
     min-height: 100vh;
     height: 100%;
@@ -33,7 +30,9 @@ body {
     border-bottom: 2px solid rgba(255,255,255,0.1); 
 }
 
-
+.title{
+    color: var(--color-brand2)
+}
 
 .container{
     border: 1px solid black;
@@ -44,22 +43,40 @@ body {
 .row{
     background-color: var(--color-base);}
 
-    .css-button-shadow--grey {
-        min-width: 130px;
-        height: 40px;
-        color: #fff;
-        padding: 5px 10px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-        display: inline-block;
-        outline: none;
-        border-radius: 5px;
-        border: none;
-        background-color: #6c757d;
-        box-shadow: 0 3px 1px -2px #ccc, 0 2px 2px 0 #ccc, 0 1px 5px 0 #ccc;
-      }
-      .css-button-shadow--grey:active {
-        box-shadow: 0 4px 2px -3px #ccc, 0 4px 5px 1px #ccc, 0 2px 7px 1px #ccc;
-      }
+.grid{
+    height: 99%;
+    width: 99%;
+    border: 1px black solid;
+    flex-shrink: 1;
+    margin: auto;
+    background-color: white;
+}
+
+.grid-card, .button-card{
+    background-color: var(--color-base);
+}
+
+
+
+
+/* Buttons */
+.css-button-shadow--grey {
+    min-width: 130px;
+    height: 40px;
+    color: var(--color-heading);
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background-color: #6c757d;
+    box-shadow: 0 3px 1px -1px var(--color-brand2), 0 2px 2px 0 var(--color-brand2), 0 1px 5px 0 var(--color-brand2);
+    }
+.css-button-shadow--grey:active {
+    box-shadow: 0 4px 2px -3px var(--color-brand2), 0 4px 5px 1px var(--color-brand2), 0 2px 7px 1px var(--color-brand2);
+    }
+
