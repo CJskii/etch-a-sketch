@@ -8,6 +8,8 @@
     --color-brand2: #deff58;
     --sidbar-width: 240px;
     --font-base: "Bai Jamjuree";
+    --grid-cols: 1;
+    --grid-rows: 1;
 }
 
 * {
@@ -43,14 +45,18 @@ body {
 .row{
     background-color: var(--color-base);}
 
-.grid{
-    height: 99%;
-    width: 99%;
-    border: 1px black solid;
-    flex-shrink: 1;
-    margin: auto;
-    background-color: white;
+.grid-container{
+    display: grid;
+    grid-gap: .1em;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
+
+.grid-item {
+    padding: .1em;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
 
 .grid-card, .button-card{
     background-color: var(--color-base);

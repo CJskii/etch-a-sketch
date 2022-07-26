@@ -14,11 +14,19 @@ function logText(e){
 }
 
 
-let grid = function(num){
-    const container = document.querySelector('container')
-    for (i = 0; i < num; i++){
-        let div = document.createElement('div').setAttribute('class', 'grid')
-        container.appendChild(div);
-    }
-}
+
+let makeGrid = function(rows, cols){
+    const gridContainer = document.querySelector('#container');
+    gridContainer.setAttribute('style', '--grid-rows: rows')
+    gridContainer.setAttribute('style', '--grid-cols: cols')
+    //gridContainer.style.cssText = '--grid-rows: rows'
+    //gridContainer.style.cssText = '--grid-cols: cols'
+    for (let i = 0; i < (rows * cols); i++){
+        let cell = document.createElement('div');
+        cell.innerText = (i + 1);
+        gridContainer.appendChild(cell).className = 'grid-item'
+    };
+};
+
+console.log(document.querySelector("#container"));
 
