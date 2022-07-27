@@ -63,26 +63,19 @@ body {
 }
 
 
+/*panel*/ 
 
+.color-container{
+    min-width: 100%;
+}
 
-/* Buttons */
-.css-button-shadow--grey {
-    min-width: 130px;
-    height: 40px;
-    color: var(--color-heading);
-    padding: 5px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    background-color: #6c757d;
-    box-shadow: 0 3px 1px -1px var(--color-brand2), 0 2px 2px 0 var(--color-brand2), 0 1px 5px 0 var(--color-brand2);
-    }
-.css-button-shadow--grey:active {
-    box-shadow: 0 4px 2px -3px var(--color-brand2), 0 4px 5px 1px var(--color-brand2), 0 2px 7px 1px var(--color-brand2);
-    }
+.color-picker{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+}
 
+button{
+    min-width: 80%;
+}
