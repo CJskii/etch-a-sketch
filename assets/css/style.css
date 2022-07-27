@@ -37,9 +37,8 @@ body {
 }
 
 .container{
-    border: 1px solid black;
     height: 100vh;
-    background-color: antiquewhite;
+    background-color: #022a30
 }
 
 .row{
@@ -78,4 +77,9 @@ body {
 
 button{
     min-width: 80%;
+}
+
+.input{
+    max-width: 75px;
+    min-height: 75px;
 }
