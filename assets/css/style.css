@@ -1,11 +1,15 @@
-/* GREEN-YELLOW THEME*/
+/* dark purple 1D1A31
+english violet 4D2D52
+plum 9A4C95
+charm pink F08CAE
+silver pink C1A5A9 */
 :root {
     --color-body: #b6cbce;
     --color-heading: #eef3db;
     --color-base: #1D1A31;
     --color-base2: #1D1A31;
-    --color-brand: #e0f780;
-    --color-brand2: #C1A5A9;
+    --color-brand: #e7c5ca;
+    --color-brand2: #dfaabc;
     --sidbar-width: 240px;
     --font-base: "Bai Jamjuree";
     --grid-cols: 1;
@@ -34,7 +38,7 @@ body {
 }
 
 .title, label{
-    color: var(--color-brand2)
+    color: var(--color-brand)
 }
 
 .container{
@@ -42,39 +46,11 @@ body {
     background-color: #022a30
 }
 
-.row{
-    background-color: var(--color-base);}
-
-.grid-container{
-    display: grid;
-    grid-gap: .1em;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
+.main-wrapper{
+    border-bottom: 2px solid rgba(255,255,255,0.1); 
 }
-
-.grid-item {
-    padding: .1em;
-    border: 1px solid #ddd;
-    text-align: center;
-  }
-
-.grid-card, .button-card{
-    background-color: var(--color-base);
-}
-
-
 /*panel*/ 
 
-.color-container{
-    min-width: 100%;
-}
-
-.color-picker{
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border-radius: 50%;
-}
 
 button{
     min-width: 80%;
@@ -101,6 +77,6 @@ button{
 
 .css-button-shadow--grey{
     background-color: #4D2D52;
-    color: #C1A5A9
+    color: var(--color-brand2)
 }
 
