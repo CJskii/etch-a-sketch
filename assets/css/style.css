@@ -2,10 +2,10 @@
 :root {
     --color-body: #b6cbce;
     --color-heading: #eef3db;
-    --color-base: #033f47;
-    --color-base2: #022a30;
+    --color-base: #1D1A31;
+    --color-base2: #1D1A31;
     --color-brand: #e0f780;
-    --color-brand2: #deff58;
+    --color-brand2: #C1A5A9;
     --sidbar-width: 240px;
     --font-base: "Bai Jamjuree";
     --grid-cols: 1;
@@ -33,7 +33,7 @@ body {
     border-bottom: 2px solid rgba(255,255,255,0.1); 
 }
 
-.title{
+.title, label{
     color: var(--color-brand2)
 }
 
@@ -97,5 +97,10 @@ button{
         width: 300px;
         height: 600px;
     }
+}
+
+.css-button-shadow--grey{
+    background-color: #4D2D52;
+    color: #C1A5A9
 }
 
