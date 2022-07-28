@@ -15,7 +15,7 @@
 * {
     margin: 0;
     padding: 0;
-    border: 1px solid black
+    box-sizing: border-box;
 }
 
 body {
@@ -83,5 +83,19 @@ button{
 .input{
     max-width: 75px;
     min-height: 75px;
+}
+
+@media(min-width: 1024px){
+    .main-wrapper{
+        margin-top: 50px;
+    }
+    #grid-container{
+        height: 600px;
+        width: 600px;
+    }
+    #list-container{
+        width: 300px;
+        height: 600px;
+    }
 }
 

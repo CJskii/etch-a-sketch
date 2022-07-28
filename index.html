@@ -61,7 +61,7 @@
     <div class="content-wrapper">
         
         <!-- HEADER -->
-        <div class="header text-center p-2">
+        <div class="header text-center p-4">
             <h1>Etch-A-Sketch</h1>
         </div>
         <!-- HEADER -->
@@ -71,7 +71,7 @@
 
             <div class="container-fluid overflow-hidden d-flex flex-column flex-lg-row-reverse  align-items-between justify-content-between justify-content-lg-center align-items-lg-center gap-5">
 
-                <div class="row p-2 m-2 text-center d-flex justify-content-center align-items-center col-lg-6">
+                <div id="grid-container" class="row p-2 m-2 text-center d-flex justify-content-center align-items-center col-lg-6">
                     <div class="col-1">1</div>
                     <div class="col-1">1</div>
                     <div class="col-1">1</div>
@@ -242,14 +242,15 @@
                     <div class="col-1">1</div>
                 </div>
                 
-                <div class="container-fluid overflow-hidden col-sm-6 col-md-6 col-lg-3 d-flex justify-content-lg-center align-items-lg-center m-lg-4">
-                    <div class="row justify-content-center m-2">
+                <div class="container-fluid overflow-hidden col-sm-6 col-md-6 col-lg-3 d-flex justify-content-lg-center align-items-lg-center m-lg-2">
+                    <div id="list-container" class="row justify-content-center m-2">
                         <input type="color" class="color-selection col-4 rounded-4 my-4 bg-transparent border-0" color="#000000">
                         <button type="button" class="css-button-shadow--grey btn btn-dark col-4 my-3">Color Selection</button>
                         <button type="button" class="css-button-shadow--grey btn btn-dark col-4 my-3">Color Fill</button>
                         <button type="button" class="css-button-shadow--grey btn btn-dark col-4 my-3">Rainbow Mode</button>
                         <button type="button" class="css-button-shadow--grey btn btn-dark col-4 my-3">Eraser</button>
                         <button type="button" class="css-button-shadow--grey btn btn-dark col-4 my-3">Clean</button>
+                        <button type="button" class="css-button-shadow--grey btn btn-dark col-4 my-3">Grid Size</button>
                     </div>
                 </div>
                 
