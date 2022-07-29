@@ -80,3 +80,11 @@ button{
     color: var(--color-brand2)
 }
 
+#grid-container{
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
