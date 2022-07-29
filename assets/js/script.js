@@ -18,9 +18,13 @@ function logText(e){
     //return grid(10);
 }
 
-
+function removeGrid(){
+    const divs = document.querySelectorAll('div')
+    divs.forEach((div) => div.remove())
+}
 
 function makeGrid(size){
+    removeGrid()
     const gridContainer = document.querySelector('.container')
     console.log(gridContainer)
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`
