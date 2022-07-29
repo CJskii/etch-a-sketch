@@ -81,10 +81,9 @@ button{
 }
 
 #grid-container{
-    display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    border: 1px solid black;
 }
 
+.grid-item{
+    background-color: #b6cbce;
+}

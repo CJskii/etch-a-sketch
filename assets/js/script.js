@@ -20,18 +20,20 @@ function logText(e){
 
 
 
-let makeGrid = function(rows, cols){
-    gridContainer.cssText = `grid-template-columns: repeat(${rows}, 1fr); 
-    grid-template-rows: repeat(${cols}, 1fr); grid-column-gap: 0px;
-    grid-row-gap: 0px; display: grid;`
-    console.log(gridContainer.cssText)
-    for (let i = 1; i <= (rows * cols); i++){
-        let div = document.createElement('div')
-        div.setAttribute('class', 'col-1 grid-item')
-        div.style.cssText = "border: 1px solid black; height: 36px; width: 36px"; 
-        gridContainer.appendChild(div);
-    };
-};
+function makeGrid(size){
+    const gridContainer = document.querySelector('#grid-container')
+    console.log(gridContainer)
+    gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+    gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`
+    gridContainer.style.display = 'grid'
+    console.log(gridContainer)
+    let gridSize = size * size
+    for (i = 0; i < gridSize; i++){
+        let cell = document.createElement('div')
+        cell.setAttribute('class', 'grid item')
+        gridContainer.appendChild(cell)
+    }
+}
 
 
 /* TABLET div.style.cssText = "border: 1px solid black; height: 45px; width: 45px";  */
