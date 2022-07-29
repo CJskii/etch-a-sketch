@@ -1,3 +1,8 @@
+const gridContainer = document.querySelector("#grid-container");
+let rows = 16;
+let cols = 16;
+
+
 const body = document.querySelector('html')
 body.addEventListener('click', e => {
     //console.log(e)
@@ -16,17 +21,27 @@ function logText(e){
 
 
 let makeGrid = function(rows, cols){
-    const gridContainer = document.querySelector('#container');
-    gridContainer.setAttribute('style', '--grid-rows: rows')
-    gridContainer.setAttribute('style', '--grid-cols: cols')
-    //gridContainer.style.cssText = '--grid-rows: rows'
-    //gridContainer.style.cssText = '--grid-cols: cols'
-    for (let i = 0; i < (rows * cols); i++){
-        let cell = document.createElement('div');
-        cell.innerText = (i + 1);
-        gridContainer.appendChild(cell).className = 'grid-item'
+    gridContainer.cssText = `grid-template-columns: repeat(${rows}, 25px [col-start]); display: grid;`
+    console.log(gridContainer.cssText)
+    for (let i = 1; i <= (rows * cols); i++){
+        let div = document.createElement('div')
+        div.setAttribute('class', 'col-1 align-self-stretch')
+        div.style.cssText = "border: 1px solid black; height: 25px; width: 25px"; 
+        gridContainer.appendChild(div);
     };
 };
 
-console.log(document.querySelector("#container"));
 
+
+/*
+function colorSelection
+
+function colorFill
+
+function rainbowMode
+
+function eraser
+
+function clean
+*/
+//console.log(document.querySelector("#grid-container"));
