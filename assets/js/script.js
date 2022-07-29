@@ -21,7 +21,7 @@ function logText(e){
 
 
 function makeGrid(size){
-    const gridContainer = document.querySelector('#grid-container')
+    const gridContainer = document.querySelector('.container')
     console.log(gridContainer)
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`

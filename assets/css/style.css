@@ -20,70 +20,19 @@ silver pink C1A5A9 */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    background-color: var(--color-base2);
-    color: var(--color-body);
-    font-family: var(--font-base), sans-serif;
-}
-
-.full-height{
-    min-height: 100vh;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-bottom: 2px solid rgba(255,255,255,0.1); 
-}
-
-.title, label{
-    color: var(--color-brand)
-}
-
-.container{
-    height: 100vh;
-    background-color: #022a30
-}
-
-.main-wrapper{
-    border-bottom: 2px solid rgba(255,255,255,0.1); 
-}
-/*panel*/ 
-
-
-button{
-    min-width: 80%;
-}
-
-.input{
-    max-width: 75px;
-    min-height: 75px;
-}
-
-@media(min-width: 1024px){
-    .main-wrapper{
-        margin-top: 50px;
-    }
-    #grid-container{
-        height: 600px;
-        width: 600px;
-    }
-    #list-container{
-        width: 300px;
-        height: 600px;
-    }
-}
-
-.css-button-shadow--grey{
-    background-color: #4D2D52;
-    color: var(--color-brand2)
-}
-
-#grid-container{
     border: 1px solid black;
 }
 
+.container{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
 .grid-item{
-    background-color: #b6cbce;
+    width: 36px;
+    height: 36px;
+    border: 1px solid black;
 }
