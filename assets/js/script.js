@@ -1,22 +1,39 @@
 const gridContainer = document.querySelector('.container')
 let slider = document.querySelector('.form-range')
+const colorSelection = document.querySelector('.color-selection')
+
 
 // Listeners
 
-const sliderListener = slider.addEventListener("change", function() {
+const sliderListener = slider.addEventListener("change", function() { // slider listener
     let user = slider.value
     makeGrid(user);
     return printSelection(user);
 }, false);
 
-const buttons = document.querySelectorAll('button')
+const buttons = document.querySelectorAll('button') // button listener
 buttons.forEach(button => button.addEventListener('click', logText, {
     capture:true
 }));
 
+
+const color = colorSelection.addEventListener('change', function(){ //color variable from user
+    let userColor = colorSelection.value;
+    console.log(userColor)
+    return changeColor(userColor)
+})
+
 function logText(e){
     console.log(e)
 }
+
+function changeColor(color){
+    let cell = document.querySelectorAll('.grid-item')
+    cell.forEach(div => div.addEventListener('mousemove', function() {
+        div.style.backgroundColor = color;
+    }))
+}
+
 
 // Grid
 
@@ -43,12 +60,22 @@ function makeGrid(size){
 function printSelection(sliderValue){
     sliderValue = slider.value
     let label = document.querySelector('.form-label')
-    label.textContent = `Grid size: ${sliderValue} x ${sliderValue}`
+    label.textContent = `Grid: ${sliderValue} x ${sliderValue}`
     return;
 }
 
 
+let grid = document.querySelector('.container')
 
+grid.addEventListener('click', logText, {
+    capture:true
+})
+
+
+window.onload = () => {
+    makeGrid(16)
+    //changeColor(color)
+  }
 
 /* TABLET div.style.cssText = "border: 1px solid black; height: 45px; width: 45px";  */
 
