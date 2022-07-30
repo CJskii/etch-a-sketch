@@ -1,6 +1,14 @@
 const gridContainer = document.querySelector('.container')
 let slider = document.querySelector('.form-range')
 
+// Listeners
+
+const sliderListener = slider.addEventListener("change", function() {
+    let user = slider.value
+    makeGrid(user);
+    return printSelection(user);
+}, false);
+
 const buttons = document.querySelectorAll('button')
 buttons.forEach(button => button.addEventListener('click', logText, {
     capture:true
@@ -8,8 +16,9 @@ buttons.forEach(button => button.addEventListener('click', logText, {
 
 function logText(e){
     console.log(e)
-    //return grid(10);
 }
+
+// Grid
 
 function removeGrid(){
     const cells = document.querySelectorAll('.grid-item')
@@ -28,6 +37,8 @@ function makeGrid(size){
         gridContainer.appendChild(cell)
     }
 }
+
+//Selection
 
 function printSelection(sliderValue){
     sliderValue = slider.value
