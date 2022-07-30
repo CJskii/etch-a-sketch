@@ -23,9 +23,9 @@
                 </div>                
                 <button onclick="fill()" id='color-fill' class="css-button-3d--blue">Color Fill</button>
                 <button onclick="randomRgb()" id='random-mode' class="css-button-3d--blue">Random Mode</button>
-                <button onclick="changeColor('#1D1A31')" id='eraser' class="css-button-3d--blue">Eraser</button>
+                <button onclick="eraser()" id='eraser' class="css-button-3d--blue">Eraser</button>
                 <button onclick="clean()" id='clean' class="css-button-3d--blue">Clean</button>
-                <div class="grid-slider">
+                <div class="grid-slider link-custom">
                     <label for="customRange3" class="form-label"> </label>
                     <input type="range" class="form-range" min="4" max="128" step="4" value="16" id="customRange3">
                 </div>                
@@ -34,7 +34,10 @@
         
 
         <section class="footer">
-            <p>Created by CJski</p>
+            <p>Copyright ©
+                <script>
+                  document.write(new Date().getFullYear())
+                </script> <a class="link-custom" href="https://github.com/CJskii" target="_blank">CJskii</a></p>
         </section>
     </main>    
     <script src="./assets/js/script.js"></script>

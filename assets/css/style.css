@@ -1,19 +1,38 @@
-/* dark purple 1D1A31
-english violet 4D2D52
-plum 9A4C95
-charm pink F08CAE
-silver pink C1A5A9 */
-:root {
+/*:root {
     --color-body: #b6cbce;
-    --color-heading: #eef3db;
+    --color-heading: #d0f53b;
     --color-base: #1D1A31;
     --color-base2: #1D1A31;
     --color-brand: #e7c5ca;
     --color-brand2: #dfaabc;
     --sidbar-width: 240px;
     --font-base: "Bai Jamjuree";
-    --grid-cols: 1;
-    --grid-rows: 1;
+}*/
+
+/*
+:root {
+    --color-footer: #50a1e2;
+    --color-heading: #d0f53b;
+    --color-base: #000814;
+    --color-base2: #001d3d;
+    --color-base-shadow: #031527;
+    --color-brand: #ffc300;
+    --color-brand2: #ffd60a;
+    --sidbar-width: 240px;
+    --font-base: "Bai Jamjuree";
+}
+*/
+
+:root {
+    --color-footer: #50a1e2;
+    --color-heading: #d0f53b;
+    --color-base: #001027;
+    --color-base2: #002347;
+    --color-base-shadow: #011a33;
+    --color-brand: #ffc300;
+    --color-brand2: #ffe047;
+    --sidbar-width: 240px;
+    --font-base: "Bai Jamjuree";
 }
 
 * {
@@ -35,12 +54,11 @@ silver pink C1A5A9 */
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: var(--color-base2);
+    background-color: var(--color-base);
 }
 
 h1{
-
-    color: var(--color-heading);
+    color: var(--color-brand);
 }
 
 .wrapper{
@@ -58,6 +76,7 @@ h1{
     justify-content: space-between;
     align-items: center;
     width: 25%;
+    
 }
 
 .color{
@@ -81,12 +100,21 @@ input[type=color]::-webkit-color-swatch {
     border: none;
     border-radius: 50%;
     padding: 0;
+    transition: all .5s ease-in-out;
+    background: var(--color-base-shadow);
+    box-shadow:  8px 8px 33px var(--color-base-shadow),
+                -8px -8px 33px var(--color-base-shadow);
+                
   }
   
   input[type=color]::-webkit-color-swatch-wrapper {
       border: none;
       border-radius: 50%;
       padding: 0;
+  }
+
+  input[type=color]:hover{
+    transform: scale(1.05); 
   }
 
 .grid-slider{
@@ -97,10 +125,12 @@ input[type=color]::-webkit-color-swatch {
 }
 
 .grid-slider label{
-    color: #b6cbce;
+    color: var(--color-footer);
     font-size: 16px;
     padding: 10px;
 }
+
+
 
 /* GRID */
 .container{
@@ -110,6 +140,13 @@ input[type=color]::-webkit-color-swatch {
     margin: 25px;
     width: 75%;
     border: 1px solid rgba(228, 226, 226, 0.3);
+    /* gloss */
+    background: rgba(40, 13, 65, 0.1);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 
@@ -118,28 +155,63 @@ input[type=color]::-webkit-color-swatch {
 .css-button-3d--blue {
     min-width: 120px;
     height: 40px;
-    color: #fff;
+    color: var(--color-brand2);
     padding: 5px 10px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    background: #3d348b;
-    box-shadow: 0 5px #2c0b8e;
+    background: rgba(0, 35, 71, 0.3);
+    box-shadow: 0 4px 12px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
   }
   .css-button-3d--blue:hover {
-    box-shadow: 0 3px #2c0b8e;
+    box-shadow: 0 3px var(--color-base-shadow);
     top: 1px;
   }
   .css-button-3d--blue:active {
-    box-shadow: 0 0 #2c0b8e;
+    box-shadow: 0 0 var(--color-base-shadow);
     top: 5px;
   }
 
+
+/* FOOTER */
+
+.footer{
+    color: var(--color-footer)
+}
+
+a{
+    color:var(--color-footer);
+    transition: all 0.8s ease;
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--color-brand);
+}
+
+.link-custom{
+    position: relative;
+}
+
+.link-custom::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-brand);
+    position: absolute;
+    left: 0;
+    top: 110%;
+    transition: all 0.4s
+}
+
+.link-custom:hover::after{
+    width: 100%;
+}
 
 /* RESPONSIVE */
 
@@ -219,5 +291,37 @@ input[type=color]::-webkit-color-swatch {
     .grid-slider label{
         margin: 5px;
         text-align: center;
+    }
+}
+
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 125px;
+      -webkit-appearance: none;
+      background-color: #b49e2e;
+      border-radius: 25px;
+      background: rgba(0, 35, 71, 0.3); 
+      box-shadow: 0 4px 12px 0 rgba( 31, 38, 135, 0.37 );
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+      
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 15px;
+      -webkit-appearance: none;
+      color: #063666;
+      margin-top: -1px;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 15px;
+      -webkit-appearance: none;
+      height: 15px;
+      cursor: ew-resize;
+      background: #609ed1;
+      box-shadow: -80px 0 0 80px #063666;
+      
     }
 }
