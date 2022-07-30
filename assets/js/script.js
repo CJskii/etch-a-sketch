@@ -1,7 +1,3 @@
-const gridContainer = document.querySelector("#grid-container");
-let rows = 16;
-let cols = 16;
-
 
 const body = document.querySelector('html')
 body.addEventListener('click', e => {
@@ -19,22 +15,20 @@ function logText(e){
 }
 
 function removeGrid(){
-    const divs = document.querySelectorAll('div')
+    const divs = document.querySelectorAll('.grid-item')
     divs.forEach((div) => div.remove())
 }
 
 function makeGrid(size){
     removeGrid()
     const gridContainer = document.querySelector('.container')
-    console.log(gridContainer)
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`
     gridContainer.style.display = 'grid'
-    console.log(gridContainer)
     let gridSize = size * size
     for (i = 0; i < gridSize; i++){
         let cell = document.createElement('div')
-        cell.setAttribute('class', 'grid item')
+        cell.setAttribute('class', 'grid-item')
         gridContainer.appendChild(cell)
     }
 }

@@ -8,17 +8,36 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <h1>Etch-A-Sketch</h1>
-    <section class="container">
+    <main class="container-main full-height">
+        <h1>Etch-A-Sketch</h1>
         
-    </section>
-
-    <section class="selection">
-        <button>Button 1</button>
-        <button>Button 2</button>
-        <button>Button 3</button>
-    </section>
+        <div class="wrapper">
+            <section class="container">
+        
+            </section>
     
+            <section class="selection">
+                <div class="color">
+                    <input type="color" class="color-selection col-4 rounded-4 my-4 bg-transparent border-0" color="#000000">
+                    <button class="css-button-3d--blue">Color Selection</button>
+                </div>                
+                <button class="css-button-3d--blue">Color Fill</button>
+                <button class="css-button-3d--blue">Rainbow Mode</button>
+                <button class="css-button-3d--blue">Eraser</button>
+                <button class="css-button-3d--blue">Clean</button>
+                <div class="grid-slider">
+                    <label for="customRange3" class="form-label text-center mt-4">Grid Size: </label>
+                    <input type="range" class="form-range p-4" min="1" max="128" id="customRange3">
+                </div>                
+            </section>
+        </div>
+        
+
+        <section class="footer">
+            <p>Created by CJski</p>
+        </section>
+    </main>    
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
+
