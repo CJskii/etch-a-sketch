@@ -19,12 +19,12 @@
             <section class="selection">
                 <div class="color">
                     <input type="color" class="color-selection" color="#000000">
-                    <button class="css-button-3d--blue">Color Selection</button>
+                    <button onclick="changeColor(selectedColor)" class="css-button-3d--blue">Color Selection</button>
                 </div>                
                 <button onclick="fill()" id='color-fill' class="css-button-3d--blue">Color Fill</button>
-                <button id='rainbow-mode' class="css-button-3d--blue">Rainbow Mode</button>
-                <button id='eraser' class="css-button-3d--blue">Eraser</button>
-                <button id='clean' class="css-button-3d--blue">Clean</button>
+                <button onclick="randomRgb()" id='random-mode' class="css-button-3d--blue">Random Mode</button>
+                <button onclick="changeColor('#1D1A31')" id='eraser' class="css-button-3d--blue">Eraser</button>
+                <button onclick="clean()" id='clean' class="css-button-3d--blue">Clean</button>
                 <div class="grid-slider">
                     <label for="customRange3" class="form-label"> </label>
                     <input type="range" class="form-range" min="4" max="128" step="4" value="16" id="customRange3">

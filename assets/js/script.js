@@ -35,7 +35,7 @@ function logText(e){
 // FUNCTIONS 
 
 
-function changeColor(color){ // lisen to grid cells and change color
+function changeColor(selectedColor){ // lisen to grid cells and change color
     let cell = document.querySelectorAll('.grid-item')
     cell.forEach(div => div.addEventListener('mousemove', function() {
         div.style.backgroundColor = selectedColor;
@@ -68,6 +68,25 @@ function fill(){ // lisen to grid cells and change color
     let cell = document.querySelectorAll('.grid-item')
     cell.forEach((div => div.style.backgroundColor = `${selectedColor}`))
 }
+
+function clean(){
+    let cell = document.querySelectorAll('.grid-item')
+    cell.forEach((div) => div.removeAttribute('style'))
+}
+
+function randomRgb(){
+    let cell = document.querySelectorAll('.grid-item')
+    cell.forEach(div => div.addEventListener('mousemove', function() {
+        let r = Math.floor(Math.random() * 255)
+        let g = Math.floor(Math.random() * 255)
+        let b = Math.floor(Math.random() * 255)
+        let rgb = `${r}, ${g}, ${b}`
+        div.style.backgroundColor = `rgb(${rgb})`;
+    }))
+}
+
+let num = Math.floor(Math.random() * 255)
+
 
 //Selection
 
