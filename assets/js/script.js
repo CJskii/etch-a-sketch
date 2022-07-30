@@ -2,10 +2,7 @@ const gridContainer = document.querySelector('.container')
 let slider = document.querySelector('.form-range')
 const colorSelection = document.querySelector('.color-selection')
 let selectedColor = '#000000'
-const colorFill = document.querySelector('#color-fill')
-console.log(colorFill.textContent)
-const rainbowMode = document.querySelector('#rainbow-mode')
-
+let grid = document.querySelector('.container')
 
 // Listeners
 
@@ -20,7 +17,6 @@ buttons.forEach(button => button.addEventListener('click', logText, {
     capture:true
 }));
 
-
 let color = colorSelection.addEventListener('change', function(){ //color variable from user
     let userColor = colorSelection.value;
     console.log(userColor)
@@ -28,12 +24,11 @@ let color = colorSelection.addEventListener('change', function(){ //color variab
     return changeColor(userColor) // calls changeColor function
 })
 
+// FUNCTIONS 
+
 function logText(e){
     console.log(e.path)
 }
-
-// FUNCTIONS 
-
 
 function changeColor(selectedColor){ // lisen to grid cells and change color
     let cell = document.querySelectorAll('.grid-item')
@@ -42,15 +37,13 @@ function changeColor(selectedColor){ // lisen to grid cells and change color
     }))
 }
 
-
-
-function removeGrid(){ // remove current grid
+function resetGrid(){ // reset current grid
     const cells = document.querySelectorAll('.grid-item')
     cells.forEach((div) => div.remove())
 }
 
 function makeGrid(size){ //called onload and when user select grid size
-    removeGrid()
+    resetGrid()
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`
     gridContainer.style.display = 'grid'
@@ -60,21 +53,21 @@ function makeGrid(size){ //called onload and when user select grid size
         cell.setAttribute('class', 'grid-item')
         gridContainer.appendChild(cell)
     }
-    changeColor('#000000')
+    changeColor(selectedColor)
     printSelection(16);
 }
 
-function fill(){ // lisen to grid cells and change color
+function fill(){ //  fill grid with selected color
     let cell = document.querySelectorAll('.grid-item')
     cell.forEach((div => div.style.backgroundColor = `${selectedColor}`))
 }
 
-function clean(){
+function clean(){ // clean grid from background color
     let cell = document.querySelectorAll('.grid-item')
     cell.forEach((div) => div.removeAttribute('style'))
 }
 
-function randomRgb(){
+function randomRgb(){ // fill cells with rangom rgb colors on mousemove
     let cell = document.querySelectorAll('.grid-item')
     cell.forEach(div => div.addEventListener('mousemove', function() {
         let r = Math.floor(Math.random() * 255)
@@ -85,9 +78,6 @@ function randomRgb(){
     }))
 }
 
-let num = Math.floor(Math.random() * 255)
-
-
 //Selection
 
 function printSelection(sliderValue){ // capture selection from user
@@ -97,30 +87,6 @@ function printSelection(sliderValue){ // capture selection from user
     return;
 }
 
-
-let grid = document.querySelector('.container')
-
-grid.addEventListener('click', logText, { //listener to print events from grid container
-    capture:true
-})
-
-
 window.onload = () => {
     makeGrid(16)
-    //changeColor(color)
   }
-
-/* TABLET div.style.cssText = "border: 1px solid black; height: 45px; width: 45px";  */
-
-/*
-function colorSelection
-
-function colorFill
-
-function rainbowMode
-
-function eraser
-
-function clean
-*/
-//console.log(document.querySelector("#grid-container"));
