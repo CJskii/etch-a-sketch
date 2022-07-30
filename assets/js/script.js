@@ -1,8 +1,5 @@
-
-const body = document.querySelector('html')
-body.addEventListener('click', e => {
-    //console.log(e)
-})
+const gridContainer = document.querySelector('.container')
+let slider = document.querySelector('.form-range')
 
 const buttons = document.querySelectorAll('button')
 buttons.forEach(button => button.addEventListener('click', logText, {
@@ -15,13 +12,12 @@ function logText(e){
 }
 
 function removeGrid(){
-    const divs = document.querySelectorAll('.grid-item')
-    divs.forEach((div) => div.remove())
+    const cells = document.querySelectorAll('.grid-item')
+    cells.forEach((div) => div.remove())
 }
 
 function makeGrid(size){
     removeGrid()
-    const gridContainer = document.querySelector('.container')
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`
     gridContainer.style.display = 'grid'
@@ -32,6 +28,15 @@ function makeGrid(size){
         gridContainer.appendChild(cell)
     }
 }
+
+function printSelection(sliderValue){
+    sliderValue = slider.value
+    let label = document.querySelector('.form-label')
+    label.textContent = `Grid size: ${sliderValue} x ${sliderValue}`
+    return;
+}
+
+
 
 
 /* TABLET div.style.cssText = "border: 1px solid black; height: 45px; width: 45px";  */

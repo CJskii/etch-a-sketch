@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body onpageshow="makeGrid(16), printSelection()">
     <main class="container-main full-height">
         <h1>Etch-A-Sketch</h1>
         
@@ -18,7 +18,7 @@
     
             <section class="selection">
                 <div class="color">
-                    <input type="color" class="color-selection col-4 rounded-4 my-4 bg-transparent border-0" color="#000000">
+                    <input type="color" class="color-selection" color="#000000">
                     <button class="css-button-3d--blue">Color Selection</button>
                 </div>                
                 <button class="css-button-3d--blue">Color Fill</button>
@@ -26,8 +26,8 @@
                 <button class="css-button-3d--blue">Eraser</button>
                 <button class="css-button-3d--blue">Clean</button>
                 <div class="grid-slider">
-                    <label for="customRange3" class="form-label text-center mt-4">Grid Size: </label>
-                    <input type="range" class="form-range p-4" min="1" max="128" id="customRange3">
+                    <label for="customRange3" class="form-label">Grid Size: </label>
+                    <input type="range" class="form-range" min="1" max="128" value="16" id="customRange3">
                 </div>                
             </section>
         </div>
