@@ -67,6 +67,13 @@ function clean(){ // clean grid from background color
     cell.forEach((div) => div.removeAttribute('style'))
 }
 
+function eraser(){
+    let cell = document.querySelectorAll('.grid-item')
+    cell.forEach(div => div.addEventListener('mousemove', function() {
+        div.removeAttribute('style');
+    }))
+}
+
 function randomRgb(){ // fill cells with rangom rgb colors on mousemove
     let cell = document.querySelectorAll('.grid-item')
     cell.forEach(div => div.addEventListener('mousemove', function() {
