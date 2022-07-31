@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Mochiy';
+    src: url(../fonts/MochiyPopOne-Regular.ttf);
+}
+@font-face {
+    font-family: 'Nunito';
+    src: url(../fonts/NunitoSans-Regular.ttf);
+}
 /*:root {
     --color-body: #b6cbce;
     --color-heading: #d0f53b;
@@ -48,18 +56,6 @@
     height: 100%;
 }
 
-@keyframes transitionIn{
-    from {
-        opacity: 0;
-        transform: rotateX(-60deg)
-    }
-
-    to {
-        opacity: 1;
-        transform: rotateX(0);
-    }
-}
-
 /* MAIN CONTAINER */
 .container-main{
     display: flex;
@@ -72,7 +68,8 @@
 h1{
     color: var(--color-brand);
     font-size: 40px;
-    animation: transitionIn 2s
+    animation: transitionIn 2s;
+    font-family: 'Mochiy';
 }
 
 .wrapper{
@@ -141,8 +138,9 @@ input[type=color]::-webkit-color-swatch {
 
 .grid-slider label{
     color: var(--color-footer);
-    font-size: 16px;
+    font-size: 12px;
     padding: 10px;
+    font-family: 'Mochiy';
 }
 
 
@@ -169,6 +167,7 @@ input[type=color]::-webkit-color-swatch {
 /* BUTTONS */
 
 .css-button-3d--blue {
+    font-family: 'Nunito';
     min-width: 120px;
     height: 40px;
     color: var(--color-brand2);
@@ -199,6 +198,8 @@ input[type=color]::-webkit-color-swatch {
 .footer{
     color: var(--color-footer);
     animation: transitionIn 7s;
+    font-family: 'Mochiy';
+    font-size: 12px;
 }
 
 a{
@@ -340,5 +341,18 @@ a:hover{
       background: #609ed1;
       box-shadow: -80px 0 0 80px #063666;
       
+    }
+}
+
+
+@keyframes transitionIn{
+    from {
+        opacity: 0;
+        transform: rotateX(-60deg)
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0);
     }
 }
