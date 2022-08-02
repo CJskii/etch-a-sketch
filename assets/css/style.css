@@ -193,6 +193,12 @@ input[type=color]::-webkit-color-swatch {
   }
 
 
+  .active{
+    color: rgba( 255, 255, 255, 0.8 );
+    background: rgba(0, 35, 71, 0.6);
+    border: 1px solid var(--color-brand2)
+  }
+
 /* FOOTER */
 
 .footer{
