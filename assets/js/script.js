@@ -3,6 +3,7 @@ let slider = document.querySelector('.form-range')
 const colorSelection = document.querySelector('.color-selection')
 let selectedColor = '#000000'
 let grid = document.querySelector('.container')
+let selection
 
 // Listeners
 
@@ -13,9 +14,20 @@ const sliderListener = slider.addEventListener("change", function() { // slider 
 }, false);
 
 const buttons = document.querySelectorAll('button') // button listener
-buttons.forEach(button => button.addEventListener('click', logText, {
+buttons.forEach(button => 
+    button.addEventListener('click', logText, {
     capture:true
 }));
+
+buttons.forEach(button => {
+    button.addEventListener('click', function (){
+        buttons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        selection = this.textContent
+        changeColor()
+    })
+})
+
 
 let color = colorSelection.addEventListener('change', function(){ //color variable from user
     let userColor = colorSelection.value;
@@ -23,6 +35,7 @@ let color = colorSelection.addEventListener('change', function(){ //color variab
     selectedColor = userColor
     return changeColor(userColor) // calls changeColor function
 })
+
 
 // FUNCTIONS 
 
@@ -32,18 +45,29 @@ function logText(e){
 
 function changeColor(selectedColor){ // lisen to grid cells and change color
     let cell = document.querySelectorAll('.grid-item')
-    cell.forEach(div => div.addEventListener('mousemove', function() {
-        div.style.backgroundColor = selectedColor;
-    }))
-}
-
-function resetGrid(){ // reset current grid
-    const cells = document.querySelectorAll('.grid-item')
-    cells.forEach((div) => div.remove())
+    if (selection == 'Random Mode'){
+        cell.forEach(div => div.addEventListener('mousemove', function() {
+            let r = Math.floor(Math.random() * 255)
+            let g = Math.floor(Math.random() * 255)
+            let b = Math.floor(Math.random() * 255)
+            let rgb = `${r}, ${g}, ${b}`
+            div.style.backgroundColor = `rgb(${rgb})`;
+        }))
+    } else if (selection == 'Eraser'){
+        cell.forEach(div => div.addEventListener('mousemove', function() {
+            div.removeAttribute('style');
+        }))
+    } else {
+        cell.forEach(div => div.addEventListener('mousemove', function() {
+            div.style.backgroundColor = selectedColor;
+        }))
+    }
+    
 }
 
 function makeGrid(size){ //called onload and when user select grid size
-    resetGrid()
+    const cells = document.querySelectorAll('.grid-item')
+    cells.forEach((div) => div.remove())
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`
     gridContainer.style.display = 'grid'
@@ -65,24 +89,6 @@ function fill(){ //  fill grid with selected color
 function clean(){ // clean grid from background color
     let cell = document.querySelectorAll('.grid-item')
     cell.forEach((div) => div.removeAttribute('style'))
-}
-
-function eraser(){
-    let cell = document.querySelectorAll('.grid-item')
-    cell.forEach(div => div.addEventListener('mousemove', function() {
-        div.removeAttribute('style');
-    }))
-}
-
-function randomRgb(){ // fill cells with rangom rgb colors on mousemove
-    let cell = document.querySelectorAll('.grid-item')
-    cell.forEach(div => div.addEventListener('mousemove', function() {
-        let r = Math.floor(Math.random() * 255)
-        let g = Math.floor(Math.random() * 255)
-        let b = Math.floor(Math.random() * 255)
-        let rgb = `${r}, ${g}, ${b}`
-        div.style.backgroundColor = `rgb(${rgb})`;
-    }))
 }
 
 //Selection
