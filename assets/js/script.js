@@ -45,6 +45,20 @@ function logText(e){
     active = e.target.textContent
     console.log(active)
     console.log(selectedColor)
+    let kolor = '#337788FF'
+    let r = kolor.slice(1, 3)
+    let g = kolor.slice(3, 5)
+    let b = kolor.slice(5, 7)
+    let currentOpacity = kolor.slice(7);
+    let rgb = `#${r}${g}${b}`
+    let rgbopacity = rgb + currentOpacity /// CONVERT THIS TO RGB
+    console.log(`opacity: ${currentOpacity}`)
+    console.log(`RGB STRING : ${rgbopacity}`) 
+    //console.log(currentOpacity)
+                if (currentOpacity <= 0.9) {
+                    this.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 0.1})`;
+                    this.classList.add('gray');
+                }
 }
 
 function changeColor(selectedColor){ // lisen to grid cells and change color
