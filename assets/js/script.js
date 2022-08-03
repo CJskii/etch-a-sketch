@@ -5,6 +5,7 @@ let selectedColor = '#000000'
 let grid = document.querySelector('.container')
 let active = 'Color Selection'
 
+
 // Listeners
 
 const sliderListener = slider.addEventListener("change", function() { // slider listener
@@ -43,6 +44,7 @@ let color = colorSelection.addEventListener('change', function(){ //color variab
 function logText(e){
     active = e.target.textContent
     console.log(active)
+    console.log(selectedColor)
 }
 
 function changeColor(selectedColor){ // lisen to grid cells and change color
@@ -64,7 +66,7 @@ function changeColor(selectedColor){ // lisen to grid cells and change color
         cell.forEach(div => div.addEventListener('mousemove', function() {
             div.removeAttribute('style');
         }))
-    }     
+    } 
 }
 
 function makeGrid(size){ //called onload and when user select grid size
