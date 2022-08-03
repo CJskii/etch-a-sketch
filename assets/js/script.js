@@ -36,6 +36,12 @@ let color = colorSelection.addEventListener('change', function(){ //color variab
     let userColor = colorSelection.value;
     console.log(userColor)
     selectedColor = userColor
+    if (active != 'Color Selection'){
+        buttons.forEach(btn => btn.classList.remove('active'));
+        active = "Color Selection"
+        let button = document.querySelector('#color-selection')
+        button.classList.add('active');
+    }    
     return changeColor(selectedColor) // calls changeColor function
 })
 
